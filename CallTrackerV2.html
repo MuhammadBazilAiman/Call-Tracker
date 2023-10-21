@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cold Calling Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: antiquewhite;
+        background-image: url(https://images.template.net/123433/high-resolution-world-environment-day-background-qq0s0.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .title {
+        display: flex;
+        justify-content: center;
+        border: 1px solid black;
+        border-radius: 50px;
+        padding: 1%;
+        text-shadow: 1px 1px 1px pink;
+        box-shadow: 5px 3px 5px black;
+      }
+      .counter {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 2%;
+      }
+      .counter-name {
+        flex: 1;
+      }
+      .counter-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .not_answered {
+        display: flex;
+        align-items: center;
+      }
+
+      .main_container {
+        padding: 1%;
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: aquamarine;
+        box-shadow: 5px 3px 5px black;
+      }
+
+      footer {
+        font-size: x-small;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 class="title">Cold Calling Tracker</h1>
+    </div>
+    <div class="main_container">
+      <h1>Answered</h1>
+      <div class="counter" id="counter1">
+        <div class="counter-name">Appointment Set:</div>
+        <div class="counter-buttons">
+          <button onclick="decrement('counter1')">-</button>
+          <span id="count-counter1">0</span>
+          <button onclick="increment('counter1')">+</button>
+        </div>
+      </div>
+      <div class="counter" id="counter2">
+        <div class="counter-name">Follow-up:</div>
+        <div class="counter-buttons">
+          <button onclick="decrement('counter2')">-</button>
+          <span id="count-counter2">0</span>
+          <button onclick="increment('counter2')">+</button>
+        </div>
+      </div>
+      <div class="counter" id="counter3">
+        <div class="counter-name">Agent Attended:</div>
+        <div class="counter-buttons">
+          <button onclick="decrement('counter3')">-</button>
+          <span id="count-counter3">0</span>
+          <button onclick="increment('counter3')">+</button>
+        </div>
+      </div>
+      <div class="counter" id="counter4">
+        <div class="counter-name">Not Interested:</div>
+        <div class="counter-buttons">
+          <button onclick="decrement('counter4')">-</button>
+          <span id="count-counter4">0</span>
+          <button onclick="increment('counter4')">+</button>
+        </div>
+      </div>
+      <div class="counter" id="counter5">
+        <div class="counter-name">Wrong Number:</div>
+        <div class="counter-buttons">
+          <button onclick="decrement('counter5')">-</button>
+          <span id="count-counter5">0</span>
+          <button onclick="increment('counter5')">+</button>
+        </div>
+      </div>
+      <h1>Not Answered</h1>
+      <div class="counter" id="counter6">
+        <div class="counter-name">NA:</div>
+        <div class="counter-buttons">
+          <button onclick="decrement('counter6')">-</button>
+          <span id="count-counter6">0</span>
+          <button onclick="increment('counter6')">+</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function increment(counterId) {
+        const countElement = document.getElementById("count-" + counterId);
+        const count = parseInt(countElement.textContent);
+        countElement.textContent = count + 1;
+      }
+
+      function decrement(counterId) {
+        const countElement = document.getElementById("count-" + counterId);
+        const count = parseInt(countElement.textContent);
+        if (count > 0) {
+          countElement.textContent = count - 1;
+        }
+      }
+    </script>
+    <footer>by Muhammad Bazil Aiman &#127801;</footer>
+  </body>
+</html>
